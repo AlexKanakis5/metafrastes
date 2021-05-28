@@ -19,14 +19,20 @@ id {character}{alphanumeric}*
 
 %%
 "PROGRAM" return PROGRAM;
+"FUNCTION" return FUNCTION;
+"INTEGER" return INTEGER;
+"CHAR" return CHAR;
 {number} 	{ yylval = atoi(yytext); return NUM; }		
-{word} 	    { yylval = atoi(yytext); return WORD; }				            
-{float} 	{ yylval = atoi(yytext); return FLOAT; }	
+{word} 	    { yylval = atoi(yytext); return WORD; }				            	
 {id} 	    { yylval = atoi(yytext); return ID; }
 "+"	{ return '+'; }
 "*"	{ return '*'; }
 "/" { return '/'; }
 "-" { return '-'; }
+"(" { return LBRACKET; }
+")" { return RBRACKET; }
+";" { return SC;}
+"," { return COMMA;}
 "\n"	{ return '\n'; }
 .      	; 
 

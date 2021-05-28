@@ -54,11 +54,18 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NUM = 258,                     /* NUM  */
-    FLOAT = 259,                   /* FLOAT  */
-    ID = 260,                      /* ID  */
-    WORD = 261,                    /* WORD  */
-    PROGRAM = 262                  /* PROGRAM  */
+    SC = 258,                      /* SC  */
+    INTEGER = 259,                 /* INTEGER  */
+    CHAR = 260,                    /* CHAR  */
+    VARS = 261,                    /* VARS  */
+    NUM = 262,                     /* NUM  */
+    ID = 263,                      /* ID  */
+    WORD = 264,                    /* WORD  */
+    PROGRAM = 265,                 /* PROGRAM  */
+    FUNCTION = 266,                /* FUNCTION  */
+    LBRACKET = 267,                /* LBRACKET  */
+    RBRACKET = 268,                /* RBRACKET  */
+    COMMA = 269                    /* COMMA  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -67,11 +74,18 @@ extern int yydebug;
 #define YYEOF 0
 #define YYerror 256
 #define YYUNDEF 257
-#define NUM 258
-#define FLOAT 259
-#define ID 260
-#define WORD 261
-#define PROGRAM 262
+#define SC 258
+#define INTEGER 259
+#define CHAR 260
+#define VARS 261
+#define NUM 262
+#define ID 263
+#define WORD 264
+#define PROGRAM 265
+#define FUNCTION 266
+#define LBRACKET 267
+#define RBRACKET 268
+#define COMMA 269
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

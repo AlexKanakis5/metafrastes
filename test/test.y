@@ -5,25 +5,43 @@ void yyerror(char *);
 extern FILE *yyin;								
 extern FILE *yyout;								
 %}
-	
-%token NUM FLOAT ID WORD
-%token PROGRAM
+%token SC 
+%token INTEGER CHAR VARS
+%token NUM ID WORD
+%token PROGRAM FUNCTION
 %token '\n' 
+%token LBRACKET RBRACKET 
+%token COMMA
 %left '+' '-'
 %left '*' '/'
-
+%left LBRACKET RBRACKET
 %%
 
-start: PROGRAM ID '\n' expr 
+start: PROGRAM ID '\n' main 
     ;
 
+main: expr SC
+    | function 
+;
+
+function: FUNCTION ID LBRACKET params RBRACKET body
+;
+
+body: VARS CHAR params
+    | VARS INTEGER params
+;
+params: ID
+      | params COMMA
+;
+
+
+
 expr:  	  NUM
-    | FLOAT
 	| expr '+' expr           { $$ = $1 + $3; }
 	| expr '*' expr           { $$ = $1 * $3; }
     | expr '/' expr           { $$ = $1 / $3; }
     | expr '-' expr           { $$ = $1 - $3; }
-	;
+;
 								    
 %%								    
     
