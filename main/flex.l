@@ -13,7 +13,7 @@
 %%
 								            
 
-\= {return (EQ); }
+\= return (EQ); 
 \+ return (PLUS);
 \- return (MINUS);
 \* return (MUL);

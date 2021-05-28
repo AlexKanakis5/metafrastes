@@ -8,33 +8,35 @@ extern FILE *yyout;
 %}
 	    
 %token INTEGER 
-%token FLOAT
-%token DOT
+%token FLOAT ID 
 %token IF
-%token WHILE
-%token FOR
-%token ID
+%token WHILE ENDWHILE FOR TO STEP 
 %token PROGRAM
 %token RETURN
-%token END_FUNCTION
-%token FUNCTION
+%token FUNCTION END_FUNCTION
 %token VARS
-%token ENDWHILE
-%token TO
-%token STEP
-%token PLUS
-%token MINUS
-%token MUL
-%token DIVIDE
+%token PLUS MINUS MUL DIVIDE
 %token SEMICOLON
 %token EQ
 %token LBRACKET RBRACKET LHOOK RHOOK
 %token NEWLINE
-%token COLON COMMA
+%token COLON COMMA DOT
 %token NE LR LE GT GE LT
+
+
 %%
 
-statement: 
+start: expr  			  { fprintf(yyout, "%i\n", $1); }
+ ;
+				    
+expr:  INTEGER
+	| expr PLUS expr          { $$ = $1 + $3; }
+	| expr MUL expr           { $$ = $1 * $3; }
+	;
+
+
+
+ 
 %%							    
     
 

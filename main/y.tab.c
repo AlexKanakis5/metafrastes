@@ -121,32 +121,32 @@ extern int yydebug;
     YYUNDEF = 257,                 /* "invalid token"  */
     INTEGER = 258,                 /* INTEGER  */
     FLOAT = 259,                   /* FLOAT  */
-    DOT = 260,                     /* DOT  */
+    ID = 260,                      /* ID  */
     IF = 261,                      /* IF  */
     WHILE = 262,                   /* WHILE  */
-    FOR = 263,                     /* FOR  */
-    ID = 264,                      /* ID  */
-    PROGRAM = 265,                 /* PROGRAM  */
-    RETURN = 266,                  /* RETURN  */
-    END_FUNCTION = 267,            /* END_FUNCTION  */
-    FUNCTION = 268,                /* FUNCTION  */
-    VARS = 269,                    /* VARS  */
-    ENDWHILE = 270,                /* ENDWHILE  */
-    TO = 271,                      /* TO  */
-    STEP = 272,                    /* STEP  */
-    PLUS = 273,                    /* PLUS  */
-    MINUS = 274,                   /* MINUS  */
-    MUL = 275,                     /* MUL  */
-    DIVIDE = 276,                  /* DIVIDE  */
-    SEMICOLON = 277,               /* SEMICOLON  */
-    EQ = 278,                      /* EQ  */
-    LBRACKET = 279,                /* LBRACKET  */
-    RBRACKET = 280,                /* RBRACKET  */
-    LHOOK = 281,                   /* LHOOK  */
-    RHOOK = 282,                   /* RHOOK  */
-    NEWLINE = 283,                 /* NEWLINE  */
-    COLON = 284,                   /* COLON  */
-    COMMA = 285,                   /* COMMA  */
+    ENDWHILE = 263,                /* ENDWHILE  */
+    FOR = 264,                     /* FOR  */
+    TO = 265,                      /* TO  */
+    STEP = 266,                    /* STEP  */
+    PROGRAM = 267,                 /* PROGRAM  */
+    RETURN = 268,                  /* RETURN  */
+    FUNCTION = 269,                /* FUNCTION  */
+    END_FUNCTION = 270,            /* END_FUNCTION  */
+    VARS = 271,                    /* VARS  */
+    PLUS = 272,                    /* PLUS  */
+    MINUS = 273,                   /* MINUS  */
+    MUL = 274,                     /* MUL  */
+    DIVIDE = 275,                  /* DIVIDE  */
+    SEMICOLON = 276,               /* SEMICOLON  */
+    EQ = 277,                      /* EQ  */
+    LBRACKET = 278,                /* LBRACKET  */
+    RBRACKET = 279,                /* RBRACKET  */
+    LHOOK = 280,                   /* LHOOK  */
+    RHOOK = 281,                   /* RHOOK  */
+    NEWLINE = 282,                 /* NEWLINE  */
+    COLON = 283,                   /* COLON  */
+    COMMA = 284,                   /* COMMA  */
+    DOT = 285,                     /* DOT  */
     NE = 286,                      /* NE  */
     LR = 287,                      /* LR  */
     LE = 288,                      /* LE  */
@@ -163,32 +163,32 @@ extern int yydebug;
 #define YYUNDEF 257
 #define INTEGER 258
 #define FLOAT 259
-#define DOT 260
+#define ID 260
 #define IF 261
 #define WHILE 262
-#define FOR 263
-#define ID 264
-#define PROGRAM 265
-#define RETURN 266
-#define END_FUNCTION 267
-#define FUNCTION 268
-#define VARS 269
-#define ENDWHILE 270
-#define TO 271
-#define STEP 272
-#define PLUS 273
-#define MINUS 274
-#define MUL 275
-#define DIVIDE 276
-#define SEMICOLON 277
-#define EQ 278
-#define LBRACKET 279
-#define RBRACKET 280
-#define LHOOK 281
-#define RHOOK 282
-#define NEWLINE 283
-#define COLON 284
-#define COMMA 285
+#define ENDWHILE 263
+#define FOR 264
+#define TO 265
+#define STEP 266
+#define PROGRAM 267
+#define RETURN 268
+#define FUNCTION 269
+#define END_FUNCTION 270
+#define VARS 271
+#define PLUS 272
+#define MINUS 273
+#define MUL 274
+#define DIVIDE 275
+#define SEMICOLON 276
+#define EQ 277
+#define LBRACKET 278
+#define RBRACKET 279
+#define LHOOK 280
+#define RHOOK 281
+#define NEWLINE 282
+#define COLON 283
+#define COMMA 284
+#define DOT 285
 #define NE 286
 #define LR 287
 #define LE 288
@@ -218,32 +218,32 @@ enum yysymbol_kind_t
   YYSYMBOL_YYUNDEF = 2,                    /* "invalid token"  */
   YYSYMBOL_INTEGER = 3,                    /* INTEGER  */
   YYSYMBOL_FLOAT = 4,                      /* FLOAT  */
-  YYSYMBOL_DOT = 5,                        /* DOT  */
+  YYSYMBOL_ID = 5,                         /* ID  */
   YYSYMBOL_IF = 6,                         /* IF  */
   YYSYMBOL_WHILE = 7,                      /* WHILE  */
-  YYSYMBOL_FOR = 8,                        /* FOR  */
-  YYSYMBOL_ID = 9,                         /* ID  */
-  YYSYMBOL_PROGRAM = 10,                   /* PROGRAM  */
-  YYSYMBOL_RETURN = 11,                    /* RETURN  */
-  YYSYMBOL_END_FUNCTION = 12,              /* END_FUNCTION  */
-  YYSYMBOL_FUNCTION = 13,                  /* FUNCTION  */
-  YYSYMBOL_VARS = 14,                      /* VARS  */
-  YYSYMBOL_ENDWHILE = 15,                  /* ENDWHILE  */
-  YYSYMBOL_TO = 16,                        /* TO  */
-  YYSYMBOL_STEP = 17,                      /* STEP  */
-  YYSYMBOL_PLUS = 18,                      /* PLUS  */
-  YYSYMBOL_MINUS = 19,                     /* MINUS  */
-  YYSYMBOL_MUL = 20,                       /* MUL  */
-  YYSYMBOL_DIVIDE = 21,                    /* DIVIDE  */
-  YYSYMBOL_SEMICOLON = 22,                 /* SEMICOLON  */
-  YYSYMBOL_EQ = 23,                        /* EQ  */
-  YYSYMBOL_LBRACKET = 24,                  /* LBRACKET  */
-  YYSYMBOL_RBRACKET = 25,                  /* RBRACKET  */
-  YYSYMBOL_LHOOK = 26,                     /* LHOOK  */
-  YYSYMBOL_RHOOK = 27,                     /* RHOOK  */
-  YYSYMBOL_NEWLINE = 28,                   /* NEWLINE  */
-  YYSYMBOL_COLON = 29,                     /* COLON  */
-  YYSYMBOL_COMMA = 30,                     /* COMMA  */
+  YYSYMBOL_ENDWHILE = 8,                   /* ENDWHILE  */
+  YYSYMBOL_FOR = 9,                        /* FOR  */
+  YYSYMBOL_TO = 10,                        /* TO  */
+  YYSYMBOL_STEP = 11,                      /* STEP  */
+  YYSYMBOL_PROGRAM = 12,                   /* PROGRAM  */
+  YYSYMBOL_RETURN = 13,                    /* RETURN  */
+  YYSYMBOL_FUNCTION = 14,                  /* FUNCTION  */
+  YYSYMBOL_END_FUNCTION = 15,              /* END_FUNCTION  */
+  YYSYMBOL_VARS = 16,                      /* VARS  */
+  YYSYMBOL_PLUS = 17,                      /* PLUS  */
+  YYSYMBOL_MINUS = 18,                     /* MINUS  */
+  YYSYMBOL_MUL = 19,                       /* MUL  */
+  YYSYMBOL_DIVIDE = 20,                    /* DIVIDE  */
+  YYSYMBOL_SEMICOLON = 21,                 /* SEMICOLON  */
+  YYSYMBOL_EQ = 22,                        /* EQ  */
+  YYSYMBOL_LBRACKET = 23,                  /* LBRACKET  */
+  YYSYMBOL_RBRACKET = 24,                  /* RBRACKET  */
+  YYSYMBOL_LHOOK = 25,                     /* LHOOK  */
+  YYSYMBOL_RHOOK = 26,                     /* RHOOK  */
+  YYSYMBOL_NEWLINE = 27,                   /* NEWLINE  */
+  YYSYMBOL_COLON = 28,                     /* COLON  */
+  YYSYMBOL_COMMA = 29,                     /* COMMA  */
+  YYSYMBOL_DOT = 30,                       /* DOT  */
   YYSYMBOL_NE = 31,                        /* NE  */
   YYSYMBOL_LR = 32,                        /* LR  */
   YYSYMBOL_LE = 33,                        /* LE  */
@@ -251,7 +251,8 @@ enum yysymbol_kind_t
   YYSYMBOL_GE = 35,                        /* GE  */
   YYSYMBOL_LT = 36,                        /* LT  */
   YYSYMBOL_YYACCEPT = 37,                  /* $accept  */
-  YYSYMBOL_statement = 38                  /* statement  */
+  YYSYMBOL_start = 38,                     /* start  */
+  YYSYMBOL_expr = 39                       /* expr  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -571,18 +572,18 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  2
+#define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   0
+#define YYLAST   5
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  37
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  2
+#define YYNNTS  3
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  2
+#define YYNRULES  5
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  3
+#define YYNSTATES  9
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   291
@@ -635,7 +636,7 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    37,    37
+       0,    29,    29,    32,    33,    34
 };
 #endif
 
@@ -652,11 +653,11 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "INTEGER", "FLOAT",
-  "DOT", "IF", "WHILE", "FOR", "ID", "PROGRAM", "RETURN", "END_FUNCTION",
-  "FUNCTION", "VARS", "ENDWHILE", "TO", "STEP", "PLUS", "MINUS", "MUL",
+  "ID", "IF", "WHILE", "ENDWHILE", "FOR", "TO", "STEP", "PROGRAM",
+  "RETURN", "FUNCTION", "END_FUNCTION", "VARS", "PLUS", "MINUS", "MUL",
   "DIVIDE", "SEMICOLON", "EQ", "LBRACKET", "RBRACKET", "LHOOK", "RHOOK",
-  "NEWLINE", "COLON", "COMMA", "NE", "LR", "LE", "GT", "GE", "LT",
-  "$accept", "statement", YY_NULLPTR
+  "NEWLINE", "COLON", "COMMA", "DOT", "NE", "LR", "LE", "GT", "GE", "LT",
+  "$accept", "start", "expr", YY_NULLPTR
 };
 
 static const char *
@@ -678,7 +679,7 @@ static const yytype_int16 yytoknum[] =
 };
 #endif
 
-#define YYPACT_NINF (-1)
+#define YYPACT_NINF (-18)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -692,7 +693,7 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -1,     0,    -1
+       2,   -18,     1,   -17,   -18,     2,     2,   -17,   -17
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -700,19 +701,19 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       2,     0,     1
+       0,     3,     0,     2,     1,     0,     0,     4,     5
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -1,    -1
+     -18,   -18,    -2
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     1
+       0,     2,     3
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -720,31 +721,31 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       2
+       5,     4,     6,     7,     8,     1
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0
+      17,     0,    19,     5,     6,     3
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,    38,     0
+       0,     3,    38,    39,     0,    17,    19,    39,    39
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    37,    38
+       0,    37,    38,    39,    39,    39
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     0
+       0,     2,     1,     1,     3,     3
 };
 
 
@@ -1211,8 +1212,26 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
+  case 2: /* start: expr  */
+#line 29 "bison.y"
+                                  { fprintf(yyout, "%i\n", yyvsp[0]); }
+#line 1219 "y.tab.c"
+    break;
 
-#line 1216 "y.tab.c"
+  case 4: /* expr: expr PLUS expr  */
+#line 33 "bison.y"
+                                  { yyval = yyvsp[-2] + yyvsp[0]; }
+#line 1225 "y.tab.c"
+    break;
+
+  case 5: /* expr: expr MUL expr  */
+#line 34 "bison.y"
+                                  { yyval = yyvsp[-2] * yyvsp[0]; }
+#line 1231 "y.tab.c"
+    break;
+
+
+#line 1235 "y.tab.c"
 
       default: break;
     }
@@ -1406,7 +1425,7 @@ yyreturn:
   return yyresult;
 }
 
-#line 38 "bison.y"
+#line 40 "bison.y"
 							    
     
 

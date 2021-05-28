@@ -56,32 +56,32 @@ extern int yydebug;
     YYUNDEF = 257,                 /* "invalid token"  */
     INTEGER = 258,                 /* INTEGER  */
     FLOAT = 259,                   /* FLOAT  */
-    DOT = 260,                     /* DOT  */
+    ID = 260,                      /* ID  */
     IF = 261,                      /* IF  */
     WHILE = 262,                   /* WHILE  */
-    FOR = 263,                     /* FOR  */
-    ID = 264,                      /* ID  */
-    PROGRAM = 265,                 /* PROGRAM  */
-    RETURN = 266,                  /* RETURN  */
-    END_FUNCTION = 267,            /* END_FUNCTION  */
-    FUNCTION = 268,                /* FUNCTION  */
-    VARS = 269,                    /* VARS  */
-    ENDWHILE = 270,                /* ENDWHILE  */
-    TO = 271,                      /* TO  */
-    STEP = 272,                    /* STEP  */
-    PLUS = 273,                    /* PLUS  */
-    MINUS = 274,                   /* MINUS  */
-    MUL = 275,                     /* MUL  */
-    DIVIDE = 276,                  /* DIVIDE  */
-    SEMICOLON = 277,               /* SEMICOLON  */
-    EQ = 278,                      /* EQ  */
-    LBRACKET = 279,                /* LBRACKET  */
-    RBRACKET = 280,                /* RBRACKET  */
-    LHOOK = 281,                   /* LHOOK  */
-    RHOOK = 282,                   /* RHOOK  */
-    NEWLINE = 283,                 /* NEWLINE  */
-    COLON = 284,                   /* COLON  */
-    COMMA = 285,                   /* COMMA  */
+    ENDWHILE = 263,                /* ENDWHILE  */
+    FOR = 264,                     /* FOR  */
+    TO = 265,                      /* TO  */
+    STEP = 266,                    /* STEP  */
+    PROGRAM = 267,                 /* PROGRAM  */
+    RETURN = 268,                  /* RETURN  */
+    FUNCTION = 269,                /* FUNCTION  */
+    END_FUNCTION = 270,            /* END_FUNCTION  */
+    VARS = 271,                    /* VARS  */
+    PLUS = 272,                    /* PLUS  */
+    MINUS = 273,                   /* MINUS  */
+    MUL = 274,                     /* MUL  */
+    DIVIDE = 275,                  /* DIVIDE  */
+    SEMICOLON = 276,               /* SEMICOLON  */
+    EQ = 277,                      /* EQ  */
+    LBRACKET = 278,                /* LBRACKET  */
+    RBRACKET = 279,                /* RBRACKET  */
+    LHOOK = 280,                   /* LHOOK  */
+    RHOOK = 281,                   /* RHOOK  */
+    NEWLINE = 282,                 /* NEWLINE  */
+    COLON = 283,                   /* COLON  */
+    COMMA = 284,                   /* COMMA  */
+    DOT = 285,                     /* DOT  */
     NE = 286,                      /* NE  */
     LR = 287,                      /* LR  */
     LE = 288,                      /* LE  */
@@ -98,32 +98,32 @@ extern int yydebug;
 #define YYUNDEF 257
 #define INTEGER 258
 #define FLOAT 259
-#define DOT 260
+#define ID 260
 #define IF 261
 #define WHILE 262
-#define FOR 263
-#define ID 264
-#define PROGRAM 265
-#define RETURN 266
-#define END_FUNCTION 267
-#define FUNCTION 268
-#define VARS 269
-#define ENDWHILE 270
-#define TO 271
-#define STEP 272
-#define PLUS 273
-#define MINUS 274
-#define MUL 275
-#define DIVIDE 276
-#define SEMICOLON 277
-#define EQ 278
-#define LBRACKET 279
-#define RBRACKET 280
-#define LHOOK 281
-#define RHOOK 282
-#define NEWLINE 283
-#define COLON 284
-#define COMMA 285
+#define ENDWHILE 263
+#define FOR 264
+#define TO 265
+#define STEP 266
+#define PROGRAM 267
+#define RETURN 268
+#define FUNCTION 269
+#define END_FUNCTION 270
+#define VARS 271
+#define PLUS 272
+#define MINUS 273
+#define MUL 274
+#define DIVIDE 275
+#define SEMICOLON 276
+#define EQ 277
+#define LBRACKET 278
+#define RBRACKET 279
+#define LHOOK 280
+#define RHOOK 281
+#define NEWLINE 282
+#define COLON 283
+#define COMMA 284
+#define DOT 285
 #define NE 286
 #define LR 287
 #define LE 288
