@@ -1,0 +1,51 @@
+/* BNFPLAYGROUND */
+
+
+
+
+<start> ::= "PROGRAM" " " <character>+ <newline>
+
+<function> ::= "FUNCTION" " " <character>+  " (" <var> ("," <var>)* ")" <newline>
+
+<newline> ::= "\n"
+
+<var_declaration> ::= "VARS"  <var_type>  <var> ("," <var>)*  ";"
+
+<var_type> ::= "CHAR" | "INTEGER"
+
+<var> ::= <character>+ <array>?
+
+<array> ::=  "[" <number>* "]"
+
+<number> ::= [0-9]
+
+<character> ::= [a-z] <number>? | [A-Z] <number>?
+
+<end_function> ::= "RETURN"  <var> ";" <newline> "END_FUNCTION" | "RETURN"  <number> ";" <newline> "END_FUNCTION"
+
+
+<unary_operator> ::= "/" | "*" | "+" | "-"
+
+<expr_var> ::= <var> | <number>+
+
+<expression> ::= <var> "=" ( <expr_var> <unary_operator> <expr_var> )+
+
+<logic_operator> ::= ">" | "<" | "==" | "!=" | "AND" | "OR"
+
+<condition> ::= "(" <expr_var> <logic_operator> <expr_var> ")"
+
+<while_loop> ::= "WHILE" <condition> <newline> "ENDWHILE"
+
+<for_loop> ::= "FOR" "counter:=" <number> "TO" <number> "STEP" <number>
+
+<if> ::= "IF" <condition> "THEN"  ( <newline> "ELSEIF" <condition> <newline> )* ( <newline> "ELSE" <newline>)?
+
+<switch> ::= "SWITCH" "(" <expression> ")" <newline> ( "CASE" "(" <expression> ")" <newline> )+  ( "DEFAULT:" <newline> )? "ENDSWITCH"
+
+<print> ::= "PRINT" "(" "'" <character>+ "'" ( "[" "," <var> "]" )? ");"
+
+<break> ::= "BREAK"
+
+<start_main> ::= "STARTMAIN"
+
+<end_main> ::= "ENDMAIN"
