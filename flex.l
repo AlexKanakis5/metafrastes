@@ -8,20 +8,39 @@
 		
 %option noyywrap
 
-digit   [0-9]
-num	{digit}+
 
 
 %%
-		
-{num} 	{ yylval = atoi(yytext); return INT; }						            
-"+"	{return '+';}
-"*"	{return '*';}
-"-" {return '-';}
-"/" {return '/';}
-[a-ZA-Z_][a-zA-Z0-9]* {return IDENTIFIER;}
-"," var
-"\n"	{ return '\n'; }
-.      	; 
-							    
+								            
+
+\= {return (EQ); }
+\+ return (PLUS);
+\- return (MINUS);
+\* return (MUL);
+\/ return (DIVIDE);
+\( return (LBRACKET);
+\) return (RBRACKET);
+\{ return (LHOOK);
+\} return (RHOOK);
+\n return (NEWLINE);
+\; return (SEMICOLON);
+\: return (COLON);
+\, return (COMMA);
+
+
+"." return (DOT);
+"!=" return (NE); 
+"<"  return (LT); 
+"<=" return (LE); 
+">"  return (GT); 
+">=" return (GE); 
+
+
+[0-9]+ return INTEGER;
+[0-9]+\.[0-9]+ return FLOAT;
+[_a-zA-Z][_a-zA-Z0-9]* return ID;
+
+
+
+. { printf("\nunidentified token %s\n",yytext); exit(1);}
 %%

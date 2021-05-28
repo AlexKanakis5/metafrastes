@@ -7,11 +7,14 @@ extern FILE *yyin;
 extern FILE *yyout;								
 %}
 	    
-%token INTEGER
-%token CHAR
-%token PROGRAM
+%token INTEGER 
+%token FLOAT
+%token DOT
+%token IF
 %token WHILE
 %token FOR
+%token ID
+%token PROGRAM
 %token RETURN
 %token END_FUNCTION
 %token FUNCTION
@@ -19,65 +22,20 @@ extern FILE *yyout;
 %token ENDWHILE
 %token TO
 %token STEP
-%left '+' 
-%left '*' 
+%token PLUS
+%token MINUS
+%token MUL
+%token DIVIDE
+%token SEMICOLON
+%token EQ
+%token LBRACKET RBRACKET LHOOK RHOOK
+%token NEWLINE
+%token COLON COMMA
+%token NE LR LE GT GE LT
 %%
 
-program: expr  			  { fprintf(yyout, "%i\n", $1); }
-         ;
-				    
-expr:  	  INT
-	| expr '+' expr           { $$ = $1 + $3; }
-	| expr '*' expr           { $$ = $1 * $3; }
-	| expr '-' expr           { $$ = $1 - $3; }
-	| expr '/' expr           { $$ = $1 / $3; }
-	;
-
-function: FUNCTION ' ' IDENTIFIER '(' var (',' var )* ')' newline
-
-start: PROGRAM ' ' character+ newline
-    ;
-
-newline: '/n'
-    ;
-
-var_declaration: VARS var_type var (',' var)* ';'
-    ;
-
-var_type: CHAR
-        | INTEGER
-    ;
-
-var: character+ array?
-    ;
-
-array: '[' number* ']'
-    ;
-
-end_function: RETURN var ';' newline END_FUNCTION
-            | RETURN number ';' newline END_FUNCTION
-    ;
-
-expr_var: var
-        | number+
-    ;
-
-assignment: var '=' (expr_var unary_operator expr_var)
-    ;
-
-condition: '(' expr_var logic_operator expr_var ')'
-    ;
-
-while_loop: WHILE condition newline ENDWHILE
-    ;
-
-for_loop: FOR 'counter:=' number  TO number STEP number
-    ;
-
-
-
-
-%%								    
+statement: 
+%%							    
     
 
 void yyerror(char *s) {
