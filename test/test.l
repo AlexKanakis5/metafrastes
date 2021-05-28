@@ -33,7 +33,7 @@ id {character}{alphanumeric}*
 ")" { return RBRACKET; }
 ";" { return SC;}
 "," { return COMMA;}
-"\n"	{ return '\n'; }
+[ \t\n]+ ;
 .      	; 
 
 		

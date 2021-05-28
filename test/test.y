@@ -9,7 +9,6 @@ extern FILE *yyout;
 %token INTEGER CHAR VARS
 %token NUM ID WORD
 %token PROGRAM FUNCTION
-%token '\n' 
 %token LBRACKET RBRACKET 
 %token COMMA
 %left '+' '-'
@@ -17,21 +16,24 @@ extern FILE *yyout;
 %left LBRACKET RBRACKET
 %%
 
-start: PROGRAM ID '\n' main 
+start: PROGRAM ID  main 
     ;
 
-main: expr SC
+main: expr SC 
+    | expr SC main
     | function 
+    | function main
+;
+//gia kapoio logo den douleyei me 2o ID-> ama anti gia params balw NUM px douleyei
+function: FUNCTION id LBRACKET params RBRACKET body
 ;
 
-function: FUNCTION ID LBRACKET params RBRACKET body
-;
 
-body: VARS CHAR params
-    | VARS INTEGER params
+body: VARS CHAR params SC
+    | VARS INTEGER params SC
 ;
 params: ID
-      | params COMMA
+      | ID COMMA params
 ;
 
 
