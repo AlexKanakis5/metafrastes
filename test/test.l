@@ -21,6 +21,7 @@ id {character}{alphanumeric}*
 array {id}"["{number}"]"
 
 %%
+"PRINT" return PRINT;
 "PROGRAM" return PROGRAM;
 "FUNCTION" return FUNCTION;
 "INTEGER" return INTEGER;
@@ -44,16 +45,17 @@ array {id}"["{number}"]"
 "ELSEIF" return ELSEIF;
 "ELSE" return ELSE;
 "ENDIF" return ENDIF;
-"SWITCH" return SWITCH;
 "CASE" return CASE;
 "DEFAULT:" return DEFAULT;
 "ENDSWITCH" return ENDSWITCH;
+"SWITCH" return SWITCH;
+"BREAK" return BREAK;
 
 {number} 	{ return NUM; }						            	
 {id} 	    { return ID; }
 {array}     { return ARRAY; }
 
-
+\"  { return QUOTE; } 
 "+"	{ return '+'; }
 "*"	{ return '*'; }
 "/" { return '/'; }
@@ -67,6 +69,8 @@ array {id}"["{number}"]"
 ")" { return RBRACKET; }
 ";" { return SC;}
 "," { return COMMA;}
+"[" { return LSQBRACKET; }
+"]" { return RSQBRACKET; }
 [ \t\n]+ ;
 .      
 

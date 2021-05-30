@@ -19,13 +19,14 @@ extern FILE *yyout;
 %token WHILE ENDWHILE FOR COUNTER TO STEP ENDFOR
 %token IF THEN ELSEIF ELSE ENDIF
 %token SWITCH ENDSWITCH CASE DEFAULT
-%token LBRACKET RBRACKET 
-%token COMMA
+%token PRINT BREAK
+%token LBRACKET RBRACKET LSQBRACKET RSQBRACKET
+%token COMMA QUOTE
 %token AND OR
 %token LT GT EQ NE
 %left '+' '-'
 %left '*' '/'
-%left LBRACKET RBRACKET
+%left LBRACKET RBRACKET 
 %%
 
 start: PROGRAM ID line STARTMAIN decl body ENDMAIN
@@ -54,10 +55,18 @@ params: ID
 
 body: ID '=' line 
     | ID '=' line body
-    | while
+    | while 
+    | while body
     | for
+    | for body
     | if
+    | if body
     | switch
+    | switch body
+    | print
+    | print body
+    | BREAK SC
+    | BREAK SC body
 ;
 
 while: WHILE  condition  body ENDWHILE
@@ -98,15 +107,19 @@ variable: ID
 
 
 
-
-
 expr:  	  NUM
 	| expr '+' expr           { $$ = $1 + $3; }
 	| expr '*' expr           { $$ = $1 * $3; }
     | expr '/' expr           { $$ = $1 / $3; }
     | expr '-' expr           { $$ = $1 - $3; }
 ;
-								    
+
+// ypothetw pws sthn ergasia ennouse "keimeno",[var] kai oxi "keimeno"[,var]
+print: PRINT LBRACKET QUOTE ID QUOTE COMMA LSQBRACKET ID RSQBRACKET RBRACKET SC
+        | PRINT LBRACKET QUOTE ID QUOTE RBRACKET SC
+;
+
+
 %%								    
     
 

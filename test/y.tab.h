@@ -83,15 +83,20 @@ extern int yydebug;
     ENDSWITCH = 284,               /* ENDSWITCH  */
     CASE = 285,                    /* CASE  */
     DEFAULT = 286,                 /* DEFAULT  */
-    LBRACKET = 287,                /* LBRACKET  */
-    RBRACKET = 288,                /* RBRACKET  */
-    COMMA = 289,                   /* COMMA  */
-    AND = 290,                     /* AND  */
-    OR = 291,                      /* OR  */
-    LT = 292,                      /* LT  */
-    GT = 293,                      /* GT  */
-    EQ = 294,                      /* EQ  */
-    NE = 295                       /* NE  */
+    PRINT = 287,                   /* PRINT  */
+    BREAK = 288,                   /* BREAK  */
+    LBRACKET = 289,                /* LBRACKET  */
+    RBRACKET = 290,                /* RBRACKET  */
+    LSQBRACKET = 291,              /* LSQBRACKET  */
+    RSQBRACKET = 292,              /* RSQBRACKET  */
+    COMMA = 293,                   /* COMMA  */
+    QUOTE = 294,                   /* QUOTE  */
+    AND = 295,                     /* AND  */
+    OR = 296,                      /* OR  */
+    LT = 297,                      /* LT  */
+    GT = 298,                      /* GT  */
+    EQ = 299,                      /* EQ  */
+    NE = 300                       /* NE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -129,15 +134,20 @@ extern int yydebug;
 #define ENDSWITCH 284
 #define CASE 285
 #define DEFAULT 286
-#define LBRACKET 287
-#define RBRACKET 288
-#define COMMA 289
-#define AND 290
-#define OR 291
-#define LT 292
-#define GT 293
-#define EQ 294
-#define NE 295
+#define PRINT 287
+#define BREAK 288
+#define LBRACKET 289
+#define RBRACKET 290
+#define LSQBRACKET 291
+#define RSQBRACKET 292
+#define COMMA 293
+#define QUOTE 294
+#define AND 295
+#define OR 296
+#define LT 297
+#define GT 298
+#define EQ 299
+#define NE 300
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
