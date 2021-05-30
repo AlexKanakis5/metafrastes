@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+
+
 %}
 
 %option noyywrap 
@@ -13,27 +16,54 @@ digit   [0-9]
 number {digit}+
 character [a-zA-Z]
 float {digit}+"."{digit}+
-word    {alphanumeric}+
-alphanumeric [_a-zA-Z][_a-zA-Z0-9]
+alphanumeric [_a-zA-Z0-9]
 id {character}{alphanumeric}*
+array {id}"["{number}"]"
 
 %%
 "PROGRAM" return PROGRAM;
 "FUNCTION" return FUNCTION;
 "INTEGER" return INTEGER;
 "CHAR" return CHAR;
-{number} 	{ yylval = atoi(yytext); return NUM; }		
-{word} 	    { yylval = atoi(yytext); return WORD; }				            	
-{id} 	    { yylval = atoi(yytext); return ID; }
+"VARS" return VARS;
+"RETURN" return RETURN;
+"END_FUNCTION" return END_FUNCTION;
+"STARTMAIN" return STARTMAIN;
+"ENDMAIN" return ENDMAIN;
+"WHILE" return WHILE;
+"ENDWHILE" return ENDWHILE;
+"AND" return AND;
+"OR" return OR;
+"counter:=" return COUNTER;
+"TO" return TO;
+"FOR" return FOR;
+"STEP" return STEP;
+"ENDFOR" return ENDFOR;
+"IF" return IF;
+"THEN" return THEN;
+"ELSEIF" return ELSEIF;
+"ELSE" return ELSE;
+"ENDIF" return ENDIF;
+
+{number} 	{ return NUM; }						            	
+{id} 	    { return ID; }
+{array}     { return ARRAY; }
+
+
 "+"	{ return '+'; }
 "*"	{ return '*'; }
 "/" { return '/'; }
 "-" { return '-'; }
+"=" { return '='; }
+">" { return GT; }
+"<" { return LT; }
+"==" { return EQ; }
+"!=" { return NE; }
 "(" { return LBRACKET; }
 ")" { return RBRACKET; }
 ";" { return SC;}
 "," { return COMMA;}
 [ \t\n]+ ;
-.      	; 
+.      
 
 		

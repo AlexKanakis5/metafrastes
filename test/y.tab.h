@@ -55,17 +55,39 @@ extern int yydebug;
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
     SC = 258,                      /* SC  */
-    INTEGER = 259,                 /* INTEGER  */
+    VARS = 259,                    /* VARS  */
     CHAR = 260,                    /* CHAR  */
-    VARS = 261,                    /* VARS  */
+    INTEGER = 261,                 /* INTEGER  */
     NUM = 262,                     /* NUM  */
     ID = 263,                      /* ID  */
-    WORD = 264,                    /* WORD  */
+    ARRAY = 264,                   /* ARRAY  */
     PROGRAM = 265,                 /* PROGRAM  */
-    FUNCTION = 266,                /* FUNCTION  */
-    LBRACKET = 267,                /* LBRACKET  */
-    RBRACKET = 268,                /* RBRACKET  */
-    COMMA = 269                    /* COMMA  */
+    STARTMAIN = 266,               /* STARTMAIN  */
+    ENDMAIN = 267,                 /* ENDMAIN  */
+    FUNCTION = 268,                /* FUNCTION  */
+    RETURN = 269,                  /* RETURN  */
+    END_FUNCTION = 270,            /* END_FUNCTION  */
+    WHILE = 271,                   /* WHILE  */
+    ENDWHILE = 272,                /* ENDWHILE  */
+    FOR = 273,                     /* FOR  */
+    COUNTER = 274,                 /* COUNTER  */
+    TO = 275,                      /* TO  */
+    STEP = 276,                    /* STEP  */
+    ENDFOR = 277,                  /* ENDFOR  */
+    IF = 278,                      /* IF  */
+    THEN = 279,                    /* THEN  */
+    ELSEIF = 280,                  /* ELSEIF  */
+    ELSE = 281,                    /* ELSE  */
+    ENDIF = 282,                   /* ENDIF  */
+    LBRACKET = 283,                /* LBRACKET  */
+    RBRACKET = 284,                /* RBRACKET  */
+    COMMA = 285,                   /* COMMA  */
+    AND = 286,                     /* AND  */
+    OR = 287,                      /* OR  */
+    LT = 288,                      /* LT  */
+    GT = 289,                      /* GT  */
+    EQ = 290,                      /* EQ  */
+    NE = 291                       /* NE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -75,17 +97,39 @@ extern int yydebug;
 #define YYerror 256
 #define YYUNDEF 257
 #define SC 258
-#define INTEGER 259
+#define VARS 259
 #define CHAR 260
-#define VARS 261
+#define INTEGER 261
 #define NUM 262
 #define ID 263
-#define WORD 264
+#define ARRAY 264
 #define PROGRAM 265
-#define FUNCTION 266
-#define LBRACKET 267
-#define RBRACKET 268
-#define COMMA 269
+#define STARTMAIN 266
+#define ENDMAIN 267
+#define FUNCTION 268
+#define RETURN 269
+#define END_FUNCTION 270
+#define WHILE 271
+#define ENDWHILE 272
+#define FOR 273
+#define COUNTER 274
+#define TO 275
+#define STEP 276
+#define ENDFOR 277
+#define IF 278
+#define THEN 279
+#define ELSEIF 280
+#define ELSE 281
+#define ENDIF 282
+#define LBRACKET 283
+#define RBRACKET 284
+#define COMMA 285
+#define AND 286
+#define OR 287
+#define LT 288
+#define GT 289
+#define EQ 290
+#define NE 291
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

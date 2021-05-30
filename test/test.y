@@ -1,3 +1,9 @@
+/* TODO 
+1. ftiakse ta expr na yposthrizoyn tis zhtoymenes ekfraseis
+p.x. var1= var3 (1/2) * var4
+
+*/
+
 %{
 #include <stdio.h>
 #include <math.h>
@@ -6,35 +12,81 @@ extern FILE *yyin;
 extern FILE *yyout;								
 %}
 %token SC 
-%token INTEGER CHAR VARS
-%token NUM ID WORD
-%token PROGRAM FUNCTION
+%token VARS CHAR INTEGER 
+%token NUM ID 
+%token ARRAY
+%token PROGRAM STARTMAIN ENDMAIN FUNCTION RETURN END_FUNCTION 
+%token WHILE ENDWHILE FOR COUNTER TO STEP ENDFOR
+%token IF THEN ELSEIF ELSE ENDIF
 %token LBRACKET RBRACKET 
 %token COMMA
+%token AND OR
+%token LT GT EQ NE
 %left '+' '-'
 %left '*' '/'
 %left LBRACKET RBRACKET
 %%
 
-start: PROGRAM ID  main 
+start: PROGRAM ID line STARTMAIN decl body ENDMAIN
     ;
 
-main: expr SC 
-    | expr SC main
+//gia th dhlwsh expressions h synarthsewn prin thn main
+line: expr SC 
+    | expr SC line
     | function 
-    | function main
-;
-//gia kapoio logo den douleyei me 2o ID-> ama anti gia params balw NUM px douleyei
-function: FUNCTION id LBRACKET params RBRACKET body
+    | function line
 ;
 
+function: FUNCTION ID LBRACKET params RBRACKET decl RETURN variable SC END_FUNCTION
+;
 
-body: VARS CHAR params SC
+//xrhsimopoieitai gia dhlwsh metablhtwn
+decl: VARS CHAR params SC
     | VARS INTEGER params SC
 ;
+
 params: ID
       | ID COMMA params
+      | ARRAY
+      | ARRAY COMMA params
 ;
+
+body: ID '=' line 
+    | ID '=' line body
+    | while
+    | for
+    | if
+;
+
+while: WHILE  condition  body ENDWHILE
+;
+
+for: FOR LBRACKET COUNTER NUM TO NUM STEP NUM RBRACKET body ENDFOR
+;
+
+if: IF condition body ENDIF
+        | IF condition body elseif ENDIF
+;
+
+elseif: ELSE body
+        | ELSEIF condition body elseif 
+;
+
+
+condition: LBRACKET variable logic variable RBRACKET
+;
+
+logic: EQ
+        | NE
+        | GT
+        | LT
+;
+
+variable: ID
+        | NUM
+;
+
+
 
 
 

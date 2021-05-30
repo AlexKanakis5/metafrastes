@@ -1,2 +1,38 @@
-PROGRAM YES 
-FUNCTION IDS (s2)
+PROGRAM testing_program
+
+FUNCTION testing_function (testing_params,II)
+
+VARS CHAR testing_params,Testing_Array[222],A ; 
+RETURN testing_return;
+
+END_FUNCTION
+
+8+8; 
+
+STARTMAIN
+
+VARS CHAR params,P[222],A ; 
+
+testingforvar = 8+8;
+testingforvar = 8+8;
+testingforvar = 8+8;
+
+WHILE (testingforwhile>b)
+testingforvar = 8+8;
+
+FOR (counter:=1 TO 2 STEP 4)
+testingforvar = 111+0;
+testingforvar = 111+0;
+for_is_inside_while_woohoo = 111+0;
+
+IF (test_if==ifa)
+test_if = 8 + 8;
+ELSE
+test_else = 7+8;
+ENDIF
+
+ENDFOR
+
+ENDWHILE
+
+ENDMAIN
