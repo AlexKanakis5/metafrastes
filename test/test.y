@@ -18,6 +18,7 @@ extern FILE *yyout;
 %token PROGRAM STARTMAIN ENDMAIN FUNCTION RETURN END_FUNCTION 
 %token WHILE ENDWHILE FOR COUNTER TO STEP ENDFOR
 %token IF THEN ELSEIF ELSE ENDIF
+%token SWITCH ENDSWITCH CASE DEFAULT
 %token LBRACKET RBRACKET 
 %token COMMA
 %token AND OR
@@ -56,6 +57,7 @@ body: ID '=' line
     | while
     | for
     | if
+    | switch
 ;
 
 while: WHILE  condition  body ENDWHILE
@@ -72,6 +74,14 @@ elseif: ELSE body
         | ELSEIF condition body elseif 
 ;
 
+switch: SWITCH condition case ENDSWITCH
+;
+
+
+case: DEFAULT body
+    | CASE condition body
+    | CASE condition body case
+;
 
 condition: LBRACKET variable logic variable RBRACKET
 ;

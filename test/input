@@ -25,14 +25,31 @@ testingforvar = 111+0;
 testingforvar = 111+0;
 for_is_inside_while_woohoo = 111+0;
 
-IF (test_if==ifa)
-test_if = 8 + 8;
+IF (test_if==2)
+test_if = 8-8;
+
+ELSEIF(cond>2)
+testing_elseif1 = 2+3;
+
+ELSEIF(second_elseif>2)
+testing_elseif2 = 2-3;
+
+ELSEIF(third_elseif>2)
+testing_elseif3 = 2-7+8;
+
 ELSE
 test_else = 7+8;
+
 ENDIF
+
+
 
 ENDFOR
 
+
+
+
 ENDWHILE
+
 
 ENDMAIN

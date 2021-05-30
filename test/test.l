@@ -44,6 +44,10 @@ array {id}"["{number}"]"
 "ELSEIF" return ELSEIF;
 "ELSE" return ELSE;
 "ENDIF" return ENDIF;
+"SWITCH" return SWITCH;
+"CASE" return CASE;
+"DEFAULT:" return DEFAULT;
+"ENDSWITCH" return ENDSWITCH;
 
 {number} 	{ return NUM; }						            	
 {id} 	    { return ID; }
