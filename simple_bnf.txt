@@ -49,12 +49,3 @@
 <start_main> ::= "STARTMAIN"
 
 <end_main> ::= "ENDMAIN"
-
-
-
-
-
-FUNCTION ID (BB) VARS CHAR y;
-[_a-zA-Z0-9]
-yylval = atoi(yytext);
-// ypothetw pws sthn ergasia ennouse "keimeno",[var] kai oxi "keimeno"[,var]
