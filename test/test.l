@@ -61,6 +61,7 @@ array {id}"["{number}"]"
 "/" { return '/'; }
 "-" { return '-'; }
 "=" { return '='; }
+"^" { return '^'; }
 ">" { return GT; }
 "<" { return LT; }
 "==" { return EQ; }

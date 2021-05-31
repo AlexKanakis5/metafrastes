@@ -2,6 +2,12 @@
 1. ftiakse ta expr na yposthrizoyn tis zhtoymenes ekfraseis
 p.x. var1= var3 (1/2) * var4
 
+-> DONE alla akoma den exoume floating arithmous opote h diairesh pasxei
+den einai zhtoumeno oi floating arithmoi ap oti katalabainw
+
+
+2. ftiakse comments
+
 */
 
 %{
@@ -26,6 +32,7 @@ extern FILE *yyout;
 %token LT GT EQ NE
 %left '+' '-'
 %left '*' '/'
+%left '^'
 %left LBRACKET RBRACKET 
 %%
 
@@ -39,7 +46,9 @@ line: expr SC
     | function line
 ;
 
-function: FUNCTION ID LBRACKET params RBRACKET decl RETURN variable SC END_FUNCTION
+//o enallaktikos kanonas einai gia thn proeretikh dhlwsh
+function: FUNCTION ID LBRACKET params RBRACKET decl body RETURN variable SC END_FUNCTION
+        | FUNCTION ID LBRACKET params RBRACKET body RETURN variable SC END_FUNCTION
 ;
 
 //xrhsimopoieitai gia dhlwsh metablhtwn
@@ -53,8 +62,8 @@ params: ID
       | ARRAY COMMA params
 ;
 
-body: ID '=' line 
-    | ID '=' line body
+body: ID '=' expr SC 
+    | ID '=' expr SC body
     | while 
     | while body
     | for
@@ -75,8 +84,8 @@ while: WHILE  condition  body ENDWHILE
 for: FOR LBRACKET COUNTER NUM TO NUM STEP NUM RBRACKET body ENDFOR
 ;
 
-if: IF condition body ENDIF
-        | IF condition body elseif ENDIF
+if: IF condition THEN body ENDIF
+        | IF condition THEN body elseif ENDIF
 ;
 
 elseif: ELSE body
@@ -99,6 +108,8 @@ logic: EQ
         | NE
         | GT
         | LT
+        | AND
+        | OR
 ;
 
 variable: ID
@@ -106,12 +117,24 @@ variable: ID
 ;
 
 
-
-expr:  	  NUM
+//shift reduce conflict otan ebala anti gia NUM variable edw 
+//to idio symbainei kai ama balw ID mazi me NUM
+//den fainetai na epireazei thn ektelesh
+expr:  	  variable
 	| expr '+' expr           { $$ = $1 + $3; }
 	| expr '*' expr           { $$ = $1 * $3; }
     | expr '/' expr           { $$ = $1 / $3; }
     | expr '-' expr           { $$ = $1 - $3; }
+    | expr operator LBRACKET expr RBRACKET
+    | expr '^' expr
+
+;
+
+operator: '+'
+        | '*'
+        | '/'
+        | '-'
+        | '^'
 ;
 
 // ypothetw pws sthn ergasia ennouse "keimeno",[var] kai oxi "keimeno"[,var]
