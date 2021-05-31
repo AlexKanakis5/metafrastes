@@ -6,7 +6,6 @@ p.x. var1= var3 (1/2) * var4
 den einai zhtoumeno oi floating arithmoi ap oti katalabainw
 
 
-2. ftiakse comments
 
 */
 

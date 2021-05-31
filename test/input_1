@@ -1,21 +1,32 @@
 PROGRAM pr_name
 
+%this is a comment
+%it is ignored 
+
+%------------FUNCTION-----------
+
 FUNCTION test_function (i,j,k,a[2])
-VARS CHAR char1;
+VARS CHAR char1; 
 char1=2;
 RETURN A;
 END_FUNCTION
 
 
+%------------ STARTMAIN -----------
+STARTMAIN %start of main
 
-STARTMAIN 
-VARS INTEGER var1,A[5];
+VARS INTEGER var1,A[111]; 
 
 var1 = 1000-1;
+
+
+%------------ WHILE -----------
 
 WHILE (test_while==1)
 
 
+%------------ FOR -----------
+% FOR IS INSIDE WHILE
 
 FOR (counter:=1 TO 200 STEP 3)
 
@@ -28,6 +39,8 @@ ENDFOR
 ENDWHILE
 
 
+
+%------------ IF -----------
 
 
 IF (testing_if!=2) THEN
@@ -49,7 +62,8 @@ var6=1+1*8*8+9-9;
 
 
 
-
+%------------SWITCH-----------
+% SWITCH IS INSIDE ELSE 
 
 SWITCH (testing_switch AND 2)
 CASE (testing_case OR 2)
@@ -71,6 +85,7 @@ ENDSWITCH
 
 ENDIF
 
+%------------ PRINT -----------
 
 PRINT("test_print",[var7]);
 PRINT("test_print_wo_var");
@@ -79,6 +94,7 @@ testing_expressions =1+1;
 var2=var3 + 5 * 2^(3-7);
 
 
+%------------ BREAK -----------
 BREAK;
 BREAK;
 BREAK;
@@ -87,4 +103,8 @@ BREAK;
 
 
 
-ENDMAIN
+ENDMAIN %THIS COMMENT IS IGNORED ALSO
+
+
+%THIS TOO
+

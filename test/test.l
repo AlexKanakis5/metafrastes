@@ -51,6 +51,7 @@ array {id}"["{number}"]"
 "SWITCH" return SWITCH;
 "BREAK" return BREAK;
 
+
 {number} 	{ return NUM; }						            	
 {id} 	    { return ID; }
 {array}     { return ARRAY; }
@@ -72,6 +73,7 @@ array {id}"["{number}"]"
 "," { return COMMA;}
 "[" { return LSQBRACKET; }
 "]" { return RSQBRACKET; }
+"%".* 
 [ \t\n]+ ;
 .      
 

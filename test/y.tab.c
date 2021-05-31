@@ -67,7 +67,7 @@
 
 
 /* First part of user prologue.  */
-#line 7 "test.y"
+#line 12 "test.y"
 
 #include <stdio.h>
 #include <math.h>
@@ -686,13 +686,13 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    33,    33,    37,    38,    39,    40,    44,    45,    49,
-      50,    53,    54,    55,    56,    59,    60,    61,    62,    63,
-      64,    65,    66,    67,    68,    69,    70,    71,    72,    75,
-      78,    81,    82,    85,    86,    89,    93,    94,    95,    98,
-     101,   102,   103,   104,   105,   106,   109,   110,   117,   118,
-     119,   120,   121,   122,   123,   127,   128,   129,   130,   131,
-     135,   136
+       0,    38,    38,    42,    43,    44,    45,    49,    50,    54,
+      55,    58,    59,    60,    61,    64,    65,    66,    67,    68,
+      69,    70,    71,    72,    73,    74,    75,    76,    77,    80,
+      83,    86,    87,    90,    91,    94,    98,    99,   100,   103,
+     106,   107,   108,   109,   110,   111,   114,   115,   122,   123,
+     124,   125,   126,   127,   128,   132,   133,   134,   135,   136,
+     140,   141
 };
 #endif
 
@@ -1359,25 +1359,25 @@ yyreduce:
   switch (yyn)
     {
   case 49: /* expr: expr '+' expr  */
-#line 118 "test.y"
+#line 123 "test.y"
                                   { yyval = yyvsp[-2] + yyvsp[0]; }
 #line 1365 "y.tab.c"
     break;
 
   case 50: /* expr: expr '*' expr  */
-#line 119 "test.y"
+#line 124 "test.y"
                                   { yyval = yyvsp[-2] * yyvsp[0]; }
 #line 1371 "y.tab.c"
     break;
 
   case 51: /* expr: expr '/' expr  */
-#line 120 "test.y"
+#line 125 "test.y"
                               { yyval = yyvsp[-2] / yyvsp[0]; }
 #line 1377 "y.tab.c"
     break;
 
   case 52: /* expr: expr '-' expr  */
-#line 121 "test.y"
+#line 126 "test.y"
                               { yyval = yyvsp[-2] - yyvsp[0]; }
 #line 1383 "y.tab.c"
     break;
@@ -1577,7 +1577,7 @@ yyreturn:
   return yyresult;
 }
 
-#line 140 "test.y"
+#line 145 "test.y"
 								    
     
 
