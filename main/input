@@ -1,0 +1,97 @@
+PROGRAM testing_program
+
+FUNCTION testing_function (testing_params,II)
+
+VARS CHAR testing_params,Testing_Array[222],A ; 
+RETURN testing_return;
+
+END_FUNCTION
+
+
+
+STARTMAIN
+
+VARS CHAR params,P[222],A ; 
+
+debug=1;
+
+testingforvar = 8+8;
+testingforvar = 8+8;
+testingforvar = 8+8;
+
+WHILE (testingforwhile>b)
+testingforvar = 8+8;
+
+debug=2;
+
+FOR (counter:=1 TO 2 STEP 4)
+debug=1;
+ 
+
+PRINT ("yassas",[segamaw]);
+PRINT ("YASAS");
+
+BREAK;
+
+
+testingforvar = 111+0;
+testingforvar = 111+0;
+for_is_inside_while_woohoo = 111+0;
+debug=1;
+
+var1=1+1;
+
+IF (test_if==2)
+test_if = 8-8;
+debug=1;
+debug=1;debug=1;debug=1;
+
+SWITCH ( var > variable )  CASE ( variable < variable ) idaa=8+8; DEFAULT: idaa=8+8; ENDSWITCH  
+SWITCH ( var > variable )  CASE ( variable < variable ) idaa=8+8; DEFAULT: idaa=8+8; ENDSWITCH  
+SWITCH ( var > variable )  CASE ( variable < variable ) idaa=8+8; DEFAULT: idaa=8+8; ENDSWITCH  
+SWITCH ( var > variable )  CASE ( variable < variable ) idaa=8+8; DEFAULT: idaa=8+8; ENDSWITCH  
+
+
+ELSEIF(cond>2)
+PROBLEMHERE = 2+3;
+
+debug=1;
+SWITCH ( var > variable ) CASE ( variable < variable ) idaa=8+8; ENDSWITCH  
+
+ELSEIF(second_elseif>2)
+testing_elseif2 = 2-3;
+debug=1;debug=1;
+debug=1;
+
+
+this_is_obsolete=1;
+
+debug=1;
+
+ELSEIF(third_elseif>2)
+testing_elseif3 = 2-7+8;
+debug=1;
+debug=1;
+
+ELSE
+test_else = 7+8;
+debug=1;debug=1;
+debug=1;
+debug=1;
+debug=1;
+
+
+ENDIF
+
+
+
+
+ENDFOR
+
+SWITCH ( var > variable )  CASE ( variable < variable ) idaa=8+8; DEFAULT: idaa=8+8; ENDSWITCH  
+
+ENDWHILE
+
+
+ENDMAIN
+
